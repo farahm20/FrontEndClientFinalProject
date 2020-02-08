@@ -1,0 +1,259 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.wrapper {
+    max-width: 1000px;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-rows: auto;
+    grid-template-areas: "header"      /*header*/
+                         "nav"                  /*menu*/
+                         "design"
+                         "designText"
+                         "designer"
+                         "designerStory"
+                         "cards"
+                         "footer";     /*footer*/
+}
+ h1, h2, h3 {
+    font-family: 'Frank Ruhl Libre', serif;
+    color: #f6fbfc;
+ }
+
+ p, ul {
+    font-family: 'Fira Sans', sans-serif;
+    color: #f6fbfc;
+ }
+
+.header {
+    grid-area: header;
+    background: url(../Images/Full_Width_Layout-Teal-Skies-Skin.jpg) no-repeat;
+    background-size: cover;
+    /* background-position: 90% bottom; */
+    /* background-size: 60%; */
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: #f6fbfc;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+/**Menu**/
+.menu {
+    grid-area: nav;
+    width: 100%;
+    background-color:#f6fbfc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.menu a {
+    
+    color: #12343b;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    padding: 1rem;
+    flex: 1;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+
+.menu a:hover{
+  background-color: #f6fbfc;
+  flex: 3;
+}
+/*Best design box*/
+.bestDesign {
+    grid-area: design;
+    
+    width: 100%;
+    height: 246px;
+    background: #ebebeb url(../Images/living-room-1.jpg) no-repeat;
+    background-size: contain;  
+}
+/*Best design text*/
+.bestText {
+    grid-area: designText;
+    position: relative;
+    width: 100%;
+    height: 32px;
+    font-size: 10px;
+    margin-top: -50px;
+    background-color: #ebebeb;
+}
+
+.bestText h2 {
+    color: #12343b;
+}
+/**Designer story**/
+.designer {
+    grid-area: designer;
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background: #ebebeb url(../Images/Nate_berkus.jpg) no-repeat;
+    background-size: contain;
+}
+
+.designerStory {
+    grid-area: designerStory;
+    display: flex;
+    width: 100%;
+    background-color: #ebebeb;
+    height: 8rem;
+}
+
+.designerStory h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 22px;
+    font-style: oblique;
+    padding: 20px 20px;
+    color: #12343b;
+}
+
+.designerStory p {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /* align-items: center; */
+    text-align: center;
+    align-self: center;
+    font-size: 10px;
+    padding: 0px 23px;
+    color: #12343b;
+}
+/**
+.achieveLookBoxes {
+    grid-area: cards;
+    background: #f6fbfc;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #040f22;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+    align-items: center;
+    padding: 1rem;
+    margin: .6rem;
+    transform: translateY(-200px);
+    width: 243px;
+}
+
+.card .chair, .card .light, .card .rug {
+    width: 100%;
+    height: 10rem;
+    box-shadow: 0 0 2rem rgba(0, 0 ,0 , 0.2);
+    border-radius: 4px;
+}
+
+.card .chair {
+    background: #ebebeb url(../images/butterfly-chair.jpg) no-repeat;
+    background-position: center 46%;
+    background-size: 40%;
+}
+
+.card .light {
+    background: #ebebeb url(../images/white-globe.jpg) no-repeat;
+    background-position: center 46%;
+    background-size: 40%;
+}
+
+.card .rug {
+    background: #ebebeb url(../images/Gray+Area+Rug.jpg) no-repeat;
+    background-position: center 46%;
+    background-size: 60%;
+}
+
+.card h3 {
+    margin: 0;
+}
+**/
+.footer {
+    grid-area: footer;
+    background: #040f22;
+    background-size: contain;
+    /* background-position: 90% bottom; */
+    background-size: cover;
+    /* height: 100px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    /* margin: -11px; */
+}
+
+.footer ul {
+    list-style-type: none;
+    font-size: 10px;
+}
+
+@media only screen and (min-width: 700px) {
+    .wrapper {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: auto;
+      grid-template-areas: "header header header header"
+                           "nav nav nav nav"
+                           "design design designText designText"
+                           "designer designer designerStory designerStory"
+                           "footer footer footer footer";
+    }
+
+    .bestText {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-size: 25px;
+        margin-top: 0px;
+        padding: 20px 30px;
+        background-color: #ebebeb;
+    }
+
+    .designerStory {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: #ebebeb;
+    }
+    
+    .designerStory h2 {
+        margin: 0;
+        margin: 0;
+        padding: 0px 35px 0px 35px;
+        width: 100%;
+    }
+    
+    .designerStory p {
+        margin: 0;
+        padding: 0px 103px 0px 0px;
+        width: 100%;
+        align-self: baseline;
+        text-align: left;
+        font-size: 10px;
+    }
+   
+  }
