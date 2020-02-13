@@ -15,14 +15,14 @@ body{
     display: grid;
     grid-template-columns: 100%;
     grid-auto-rows: auto;
-    grid-template-areas: "header"      /*header*/
-                         "nav"                  /*menu*/
-                         "design"
-                         "designText"
-                         "designer"
-                         "designerStory"
-                         "cards"
-                         "footer";     /*footer*/
+    grid-template-areas: "header"       /*header - used in all pages*/
+                         "nav"          /*nav - used in all pages*/
+                         "slider"       /*slider - used in *projects.html* */
+                         "pictures"     /*pictures - used in *inspirations.html* */
+                         "map"          /*map - used in *contact.html* page*/
+                         "design"       /*design - used in *index home page* */
+                         "designer"      /*designer - used in *index home page* */
+                         "footer";       /*footer used in all pages*/
 }
  h1, h2, h3 {
     font-family: 'Frank Ruhl Libre', serif;
@@ -34,6 +34,7 @@ body{
     color: #f6fbfc;
  }
 
+ /**************************************************************HEADER**/
 .header {
     grid-area: header;
     background: url(../Images/Full_Width_Layout-Teal-Skies-Skin.jpg) no-repeat;
@@ -46,14 +47,13 @@ body{
     justify-content: center;
     align-items: center;
 }
-
 .header h1 {
     color: #f6fbfc;
     font-size: 3rem;
     font-weight: 600;
 }
 
-/**Menu**/
+/**MENU**/
 .menu {
     grid-area: nav;
     width: 100%;
@@ -62,198 +62,408 @@ body{
     flex-direction: row;
     justify-content: space-around;
 }
-
-.menu a {
-    
+.menu a {   
     color: #12343b;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 600;
     font-size: 15px;
     text-align: center;
-    padding: 1rem;
-    flex: 1;
-    transition: all 0.2s ease;
+    padding: 0rem;
+  /*  flex: 1;
+    transition: all 0.2s ease;*/
     text-decoration: none;
 }
-
-
 .menu a:hover{
   background-color: #f6fbfc;
-  flex: 3;
-}
-/*Best design box*/
-.bestDesign {
-    grid-area: design;
-    
-    width: 100%;
-    height: 246px;
-    background: #ebebeb url(../Images/living-room-1.jpg) no-repeat;
-    background-size: contain;  
-}
-/*Best design text*/
-.bestText {
-    grid-area: designText;
-    position: relative;
-    width: 100%;
-    height: 32px;
-    font-size: 10px;
-    margin-top: -50px;
-    background-color: #ebebeb;
+  /*flex: 3;*/
 }
 
 .bestText h2 {
     color: #12343b;
 }
-/**Designer story**/
-.designer {
+
+/********************************************** Best living room design **/
+
+.holdingDesignBox1 {
+    grid-area: design;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.internalDesignBox1R {
+    flex: 1;
+    justify-content: center;
+    padding: 4px;
+    font-size: 12px;
+    margin: 0px;
+}
+
+.internalDesignBox1R img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.internalDesignBox1L {
+    flex: 2;
+    text-align: justify;
+    background: #040f22;
+    padding: 30px;
+    font-size: 14px;
+    margin: 3px;
+}
+
+.internalDesignBox1L h2 {
+    align-items: center;
+    padding: 30px;
+}
+
+/*****************************************************Designer story**/
+
+.holdingDesignBox2 {
     grid-area: designer;
+    max-width: 100%;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.internalDesignBox2L {
+    flex: 1;
+    justify-content: center;
+    padding: 30px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+
+.internalDesignBox2L img {
+    object-fit: cover;
+    height: 100%;
+    width: 177px;
+}
+
+.internalDesignBox2R {
+    flex: 2;
+    text-align: justify;
+    background: #040f22;
+    padding: 30px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+/******************************************************INSPRATIONS PAGE**/
+.pictures {
+    grid-area: pictures;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.images {
+    max-width: 100%;
+    padding: 0 4px;
+}
+
+.images img {
+    margin-top: 8px;
+    vertical-align: middle;
     width: 100%;
-    height: 200px;
-    background: #ebebeb url(../Images/Nate_berkus.jpg) no-repeat;
-    background-size: contain;
 }
 
-.designerStory {
-    grid-area: designerStory;
-    display: flex;
+/*****************************************IMAGE SLIDER IN PROJECTS PAGE**/
+
+
+.auto-slider {
+    grid-area: slider;
+    outline: 1px solid #040f22;
     width: 100%;
-    background-color: #ebebeb;
-    height: 8rem;
-}
-
-.designerStory h2 {
+    height: 550px;   
+    overflow-x: hidden;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    font-size: 22px;
-    font-style: oblique;
-    padding: 20px 20px;
-    color: #12343b;
-}
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 
-.designerStory p {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    /* align-items: center; */
-    text-align: center;
-    align-self: center;
-    font-size: 10px;
-    padding: 0px 23px;
-    color: #12343b;
+.auto-slider img {
+    display: block;
+    width: 300px;
 }
+  
+.auto-slider__content {
+    list-style: none;
+    display: flex;
+/**use it to define your image size for animation**/
 /**
-.achieveLookBoxes {
-    grid-area: cards;
-    background: #f6fbfc;
+    position: relative;                            
+    left: -2160px;**/
+    animation-name: slide;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; 
+  }
+  
+.auto-slider__content:hover {
+    animation-play-state: paused;    
+}
+  
+@keyframes slide {
+    10%{
+      transform:translateX(0);
+    }
+    15%, 30%{                                       /**same start and end point of slide show**/
+      transform:translateX(-837px);                 /**translate x working with image size**/
+    }
+    35%, 50%{
+      transform:translateX(-1763px);
+    }
+    55%, 70%{
+      transform:translateX(-2763px);
+    }
+    75%, 90%{
+      transform:translateX(0);
+    }
+}
+
+/******************************************************** CONTACT PAGE **/
+.map h2 {
+    color: #ebebeb;
+    font-size: 22px;
+}
+
+.map p {
+    font-family: 'Fira Sans', sans-serif;
+    color: #f6fbfc;
+    font-size: 12px;
+}
+
+.map
+{
+    grid-area: map;
+    background: url(../Images/contact-bg.jpeg) no-repeat;
+    background-size: cover;
+    background-color: black;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+    height: 530px;
+}
+
+.Overlay {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    padding: 12px;
+    align-items: flex-start;
+    margin: 45px;
+}
+
+.TextBox label {
+    color: white;
+}
+
+.TextBox input, textarea {
+    width: 100%;
+    color: #ebebeb;
+    border-radius: 4px;
+}
+
+.TextBox button {
+    padding: 4px 16px;
+    border-radius: 8px;
+    font-family: poppins;
+    font-size: 14px;
+}
+ /***************************************************FOOTER ALL PAGES*****/
+.footerMain {
+    grid-area: footer;
+    background: #040f22;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.flinks {
+    padding: 2px;
+    min-width: 130px;
+    align-self: center;
+}
+
+.flinks ul {
+    list-style-type: none;
+}
+
+form {
     display: flex;
     flex-wrap: wrap;
 }
 
-.card {
-    background: #040f22;
+input[type = "email"]
+{
+    border: 0;
+    padding: 2px;
+    margin-top: 1px;
+}
+
+input[type = "submit"]
+{
+    background-color: rgb(167, 81, 5);
+    color: white;
+    cursor: pointer;
+    padding: 2px 3px;
+    margin-top: 1px;
+}
+
+
+.fsociallist {
     display: flex;
-    flex-direction: column;
-    border: 1px solid #EBEBEB;
-    border-radius: 4px;
-    align-items: center;
-    padding: 1rem;
-    margin: .6rem;
-    transform: translateY(-200px);
-    width: 243px;
-}
-
-.card .chair, .card .light, .card .rug {
-    width: 100%;
-    height: 10rem;
-    box-shadow: 0 0 2rem rgba(0, 0 ,0 , 0.2);
-    border-radius: 4px;
-}
-
-.card .chair {
-    background: #ebebeb url(../images/butterfly-chair.jpg) no-repeat;
-    background-position: center 46%;
-    background-size: 40%;
-}
-
-.card .light {
-    background: #ebebeb url(../images/white-globe.jpg) no-repeat;
-    background-position: center 46%;
-    background-size: 40%;
-}
-
-.card .rug {
-    background: #ebebeb url(../images/Gray+Area+Rug.jpg) no-repeat;
-    background-position: center 46%;
-    background-size: 60%;
-}
-
-.card h3 {
-    margin: 0;
-}
-**/
-.footer {
-    grid-area: footer;
-    background: #040f22;
-    background-size: contain;
-    /* background-position: 90% bottom; */
-    background-size: cover;
-    /* height: 100px; */
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
-    /* margin: -11px; */
-}
-
-.footer ul {
     list-style-type: none;
-    font-size: 10px;
 }
 
+.fsociallist li {
+    margin: 14px;
+    font-size: 20px;
+}
+
+/***************************************************DESKTOP VIEW***/
 @media only screen and (min-width: 700px) {
     .wrapper {
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: auto;
       grid-template-areas: "header header header header"
                            "nav nav nav nav"
-                           "design design designText designText"
-                           "designer designer designerStory designerStory"
+                           "slider slider slider slider"
+                           "pictures pictures pictures pictures"
+                           "map map map map"
+                           "design design design design"
+                           "designer designer designer designer"
                            "footer footer footer footer";
     }
 
-    .bestText {
-        position: relative;
+
+/***************************************************HEADER IN ALL PAGES***/
+    .header {
+        flex-direction: row;
+    }
+/****************************************************MENU IN ALL PAGES***/
+    .menu {
+        display: flex;
+        flex-direction: row;
+        height: 55px;
         width: 100%;
-        height: 100%;
-        font-size: 25px;
-        margin-top: 0px;
-        padding: 20px 30px;
-        background-color: #ebebeb;
+        margin: 0px;
+        padding: 1rem;
+        text-align: center;
+        transform: none;
     }
 
-    .designerStory {
-        display: flex;
-        width: 100%;
+    .menu a {
+        text-decoration: none;
+    }
+/****************************************************INSPRATIONS PAGE***/
+    .images {
+        flex: 25%;
+        max-width: 50%;
+    }
+/********************************************************CONTACT PAGE***/
+    .map {
+        height: 650px;
+    }
+    .map img
+    {
+      height: 310px;
+    }
+
+    .map .Overlay {
+        font-size: 12px;
+        margin-top: 4rem;
+        margin-left: 4rem;
+    }
+
+    .map .TextBox {
+        font-size: 20px;
+    }
+ /********************************************* FOOTER IN ALL PAGES**/   
+    .footer ul {
+        font-size: 13px;
+        padding: 0px 105px;
+    }
+/********************************************** HOME PAGE--- INDEX.HTML**/
+    .holdingDesignBox1 {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .internalDesignBox1R img {
+        flex: 3;
+        object-fit: cover;
+        height: 500px;
+        width: 755px;
+    }
+
+    .internalDesignBox1L {
+        padding: 45px;
+    }
+
+    .internalDesignBox1L h2 {
+        font-size: 37px;
+        width: 20px;
+    }
+
+    .holdingDesignBox2 {
+        flex-direction: row-reverse;
+        align-items: stretch;
+    }
+
+    .internalDesignBox2L img {
+        object-fit: contain;
+        height: 400px;
+        width: fit-content;
+    }
+
+    .holdingDesignBox2 {
+        max-width: 100%;
+        flex-direction: row-reverse;
+        align-items: stretch;
+    }
+
+    .internalDesignBox2L img {
+        flex: 1;
+        object-fit: cover;
         height: 100%;
-        background-color: #ebebeb;
-    }
-    
-    .designerStory h2 {
-        margin: 0;
-        margin: 0;
-        padding: 0px 35px 0px 35px;
         width: 100%;
     }
-    
-    .designerStory p {
-        margin: 0;
-        padding: 0px 103px 0px 0px;
-        width: 100%;
-        align-self: baseline;
-        text-align: left;
-        font-size: 10px;
+
+    .internalDesignBox2R {
+        flex: 3;
+        padding: 60px;
     }
-   
-  }
+
+    .internalDesignBox2R h2 {
+        font-size: 20px;
+    }
+    
+    .internalDesignBox2R p {
+        font-size: 16px;
+    }
+/************************************************PROJECTS PAGE**/
+    .auto-slider {
+        flex-direction: row;
+        height: max-content;
+    }
+    .auto-slider img {
+        display: block;
+        width: auto;
+    }
+    
+}
