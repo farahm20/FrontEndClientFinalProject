@@ -78,9 +78,7 @@ body{
   /*flex: 3;*/
 }
 
-.bestText h2 {
-    color: #12343b;
-}
+
 
 /********************************************** Best living room design **/
 
@@ -192,6 +190,7 @@ body{
 .auto-slider img {
     display: block;
     width: 300px;
+  
 }
   
 .auto-slider__content {
@@ -295,12 +294,22 @@ body{
 .flinks {
     padding: 2px;
     min-width: 130px;
+     
     align-self: center;
 }
 
-.flinks ul {
+
+.flinks ul, a{
     list-style-type: none;
+    color: #ebebeb;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    text-align: flex-start;
+    padding: 0rem;
+    text-decoration: none;
+    cursor: pointer;
 }
+
 
 form {
     display: flex;
