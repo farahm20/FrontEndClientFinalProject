@@ -215,16 +215,16 @@ body{
       transform:translateX(0);
     }
     15%, 30%{                                       /**same start and end point of slide show**/
-      transform:translateX(-837px);                 /**translate x working with image size**/
+      transform:translateX(0px);                 /**translate x working with image size**/
     }
     35%, 50%{
-      transform:translateX(-1763px);
+      transform:translateX(-280px);
     }
     55%, 70%{
-      transform:translateX(-2763px);
+      transform:translateX(-580px);
     }
     75%, 90%{
-      transform:translateX(0);
+      transform:translateX(-870px);
     }
 }
 
@@ -473,6 +473,24 @@ input[type = "submit"]
     .auto-slider img {
         display: block;
         width: auto;
+    }
+
+    @keyframes slide {
+        10%{
+          transform:translateX(0);
+        }
+        15%, 30%{                                       /**same start and end point of slide show**/
+          transform:translateX(-837px);                 /**translate x working with image size**/
+        }
+        35%, 50%{
+          transform:translateX(-1763px);
+        }
+        55%, 70%{
+          transform:translateX(-2763px);
+        }
+        75%, 90%{
+          transform:translateX(0);
+        }
     }
     
 }
